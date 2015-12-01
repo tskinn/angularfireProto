@@ -5,6 +5,12 @@
     Always a pleasure scaffolding your apps.
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <div ng-controller="MyCtrl">
+    <div>selection is: {{chosenPlace}}</div>
+    <div>details object is: {{chosenPlaceDetails}}</div>
+    <div><input ng-model="chosenPlace" details="chosenPlaceDetails" googleplace/></div>
+  </div>
+
 </div>
 
 <div class="row marketing">
