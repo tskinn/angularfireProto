@@ -8,10 +8,10 @@
  * Controller of the protoMnKApp
  */
 angular.module('protoMnKApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('MainCtrl', function ($scope, user, Auth, Ref, $firebaseObject, $timeout) {
+        $scope.gPlace;
+        $scope.user = user.google.displayName;
+
+        $scope.logout = function() { Auth.$unauth(); };
+//        $scope.rating = "";
+    });

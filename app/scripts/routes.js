@@ -55,27 +55,28 @@ angular.module('protoMnKApp')
 
   // configure views; whenAuthenticated adds a resolve method to ensure users authenticate
   // before trying to access that route
-  .config(['$routeProvider', function($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
+    .config(['$routeProvider', function($routeProvider) {
+        $routeProvider
 
-      .when('/chat', {
-        templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      })
-      .whenAuthenticated('/account', {
-        templateUrl: 'views/account.html',
-        controller: 'AccountCtrl'
-      })
-      .otherwise({redirectTo: '/'});
-  }])
+            // .when('/chat', {
+            //     templateUrl: 'views/chat.html',
+            //     controller: 'ChatCtrl'
+            // })
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'LoginCtrl'
+            })
+            // .whenAuthenticated('/account', {
+            //     templateUrl: 'views/account.html',
+            //     controller: 'AccountCtrl'
+            // })
+            .whenAuthenticated('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl'
+            })
+        
+            .otherwise({redirectTo: '/'});
+    }])
 
   /**
    * Apply some route security. Any route's resolve method can reject the promise with
