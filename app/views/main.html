@@ -11,13 +11,14 @@
 <div class="jumbotron"> <!-- ng-controller="MyCtrl"> -->
   <div>selection is: {{chosenPlace}}</div>
   <br>
-  <form ng-submit="addressGet()">
-    <div><input  size="50" ng-model="chosenPlace" details="chosenPlaceDetails" googleplace /></div>
-  </form>
+
+    <div><input size="50" ng-model="chosenPlace" details="chosenPlaceDetails" googleplace /></div>
+    <button ng-click="addressGet()"></button>
+
   <div class="rate-selector">
       <label class="select">
         <input id="rain" name="rate" type="radio" ng-model="rating" value="rain">
-        <label class="ratesymbol rainsymbol" for="rain"></label>
+        <label class="ratesymbol rainsymbol" for="rain"></label>  
         <!-- <img src="images/Rain-100.png"> -->
       </label>
       <label class="select">
@@ -30,6 +31,9 @@
         <label class="ratesymbol sunsymbol" for="sun"></label>
         <!-- <img src="images/Sun-100.png"> -->
       </label>
+      <div>{{address.rainy}}</div>
+      <div>{{address.cloudy}}</div>
+      <div>{{address.sunny}}</div>
       <div>{{rating}}:{{user}}</div>
       <br/>
       <div>rainy:{{address.rainy}} cloudy:{{address.cloudy}} sunny:{{address.sunny}}</div>

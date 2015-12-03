@@ -14,5 +14,4 @@ angular.module('protoMnKApp')
     var profile = $firebaseObject(Ref.child('users/'+user.uid));
     profile.$bindTo($scope, 'profile');
     
-
   });
