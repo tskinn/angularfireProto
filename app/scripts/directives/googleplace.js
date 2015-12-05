@@ -16,7 +16,10 @@ angular.module('protoMnKApp')
             },
             link: function(scope, element, attrs, model) {
                 var options = {
-                    types: [],
+                    types: [
+                        'address',
+//                        'establishment'
+                    ],
                     componentRestrictions: {}
                 };
                 scope.gPlace = new google.maps.places.Autocomplete(element[0], options);
